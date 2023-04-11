@@ -18,5 +18,11 @@ public class Controller {
         return " Hello  "+ name;                                     //-->> localhost:8080/queryparam?message=<pass a String>
     }
 
+    //////////////////// ::  UC-3  :: ////////////////////
+    @RequestMapping(value = "/path/{name}", method = RequestMethod.GET)
+    public String messageTwo(@PathVariable String name){     //pass the data on the url itself
+        return "Hello " + name;                                     //-->> localhost:8080/path/<pass a String>
+        // when we have to pass a single value use Pathparam
+    }
 
 }
