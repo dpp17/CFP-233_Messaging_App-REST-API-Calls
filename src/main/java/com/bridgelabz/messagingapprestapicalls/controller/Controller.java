@@ -1,5 +1,6 @@
 package com.bridgelabz.messagingapprestapicalls.controller;
 
+import com.bridgelabz.messagingapprestapicalls.dto.PersonDTO;
 import com.bridgelabz.messagingapprestapicalls.model.Person;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,5 +25,14 @@ public class Controller {
         return "Hello " + name;                                     //-->> localhost:8080/path/<pass a String>
         // when we have to pass a single value use Pathparam
     }
+
+
+    //////////////////// ::  UC-4  :: ////////////////////
+    @RequestMapping(value = "/body", method = RequestMethod.POST)
+    public String messageThree(@RequestBody PersonDTO personDTOOne){
+        Person person = new Person(personDTOOne);
+        return person.toString();
+    }
+
 
 }
